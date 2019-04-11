@@ -1,5 +1,5 @@
 const Broker = require('amqplib')
-const QUEUE = 'mongo'
+const QUEUE = 'logs'
 const { Client } = require('../../models')
 const Boom = require('boom')
 
