@@ -1,5 +1,8 @@
 # logging-layer-api
 
+## Requirements
+download and run [logging-layer-registry](https://github.com/SadeghMahmoudpour/logging-layer-registry)
+
 ## Setup
 
 ``` bash
