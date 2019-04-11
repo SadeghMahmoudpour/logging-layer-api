@@ -1,0 +1,7 @@
+dist
+static
+node_modules
+nuxt.config.js
+postcss.config.js
+build
+extract-translations.js

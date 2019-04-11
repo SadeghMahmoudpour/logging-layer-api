@@ -1,0 +1,56 @@
+{
+  "name": "logging-layer-api",
+  "private": true,
+  "scripts": {
+    "start": "bak start",
+    "dev": "nodemon",
+    "import-csv": "node bin/import-csv.js",
+    "lint": "eslint --ext js . test/**/*.spec.js test/*.js build",
+    "lint:fix": "yarn run lint --fix",
+    "lint:staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@bakjs/auth": "^0.1.8",
+    "@bakjs/logging": "^0.3.1",
+    "@bakjs/minio": "^0.1.1",
+    "@bakjs/policy": "^0.1.2",
+    "ajv": "^5.2.2",
+    "amqplib": "^0.5.3",
+    "axios": "^0.16.2",
+    "bak": "^1.1.3",
+    "boom": "^5.2.0",
+    "cachios": "^1.0.7",
+    "chalk": "^2.3.0",
+    "csv": "^5.1.1",
+    "form-data": "^2.2.0",
+    "hapi-rabbit": "0.0.4",
+    "joi": "^10.6.0",
+    "joi-objectid": "^2.0.0",
+    "json2csv": "^4.4.1",
+    "lodash": "^4.17.4",
+    "lru-cache": "^4.1.1",
+    "moment": "^2.20.1",
+    "mongo-json-escape": "^0.0.1",
+    "verror": "^1.10.0"
+  },
+  "devDependencies": {
+    "commander": "^2.12.2",
+    "eslint": "^4.12.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "fast-csv": "^2.4.1",
+    "lint-staged": "^5.0.0",
+    "nodemon": "^1.11.0"
+  },
+  "workspaces": [
+    "lib/plugins/*"
+  ],
+  "engines": {
+    "node": " >= 8"
+  }
+}
