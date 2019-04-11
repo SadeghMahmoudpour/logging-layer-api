@@ -4,7 +4,6 @@
   "scripts": {
     "start": "bak start",
     "dev": "nodemon",
-    "import-csv": "node bin/import-csv.js",
     "lint": "eslint --ext js . test/**/*.spec.js test/*.js build",
     "lint:fix": "yarn run lint --fix",
     "lint:staged": "lint-staged"

@@ -1,5 +1,6 @@
 const api = require('./api/routes')
 const rabbit = require('./lib/plugins/rabbit')
+const initializer = require('./lib/plugins/initializer')
 
 module.exports = {
   // Routes
@@ -14,7 +15,8 @@ module.exports = {
     '@bakjs/logging',
     '@bakjs/auth',
     '@bakjs/policy',
-    { register: rabbit }
+    { register: rabbit },
+    { register: initializer }
   ],
 
   // Plugin options

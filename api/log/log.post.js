@@ -16,7 +16,7 @@ module.exports = {
     let { key, tag, retrievable, data } = request.payload
     let storage = retrievable ? 'mongo' : 'hdfs'
 
-    const client = await Client.findOne({key})
+    const client = await Client.findOne({ key })
     if (!client) {
       return reply(Boom.unauthorized('invalid client key'))
     }
@@ -24,13 +24,12 @@ module.exports = {
     data = JSON.parse(data)
     data.client = client._id
     data = JSON.stringify(data)
-
-    let conn = await Broker.connect('amqp://rabbitmq:rabbitmq@localhost/log')
+    let conn = await Broker.connect('amqp://rabbitmq:rabbitmq@localhost/')
     let chan = await conn.createChannel()
     await chan.assertQueue(QUEUE, {durable: false})
     await chan.sendToQueue(QUEUE, Buffer.from(data), {
       headers: {
-        tag:  storage+'.'+tag
+        tag: storage + '.' + tag
       }
     })
     setTimeout(function () {
