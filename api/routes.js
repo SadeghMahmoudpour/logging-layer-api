@@ -23,5 +23,11 @@ module.exports = [
       './api/log/log.get.js',
       './api/log/timeSerie.get.js',
     ]
+  },
+  {
+    prefix: '/file',
+    routes: [
+      './api/file/list.get.js',
+    ]
   }
 ]
