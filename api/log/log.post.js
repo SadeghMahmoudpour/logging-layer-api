@@ -18,7 +18,7 @@ module.exports = {
 
     const client = await Client.findOne({ key })
     if (!client) {
-      return reply(Boom.unauthorized('invalid client key'))
+      return reply(Boom.unauthorized('کارفرما نامعتبر است'))
     }
 
     data = JSON.parse(data)
