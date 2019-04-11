@@ -8,9 +8,6 @@ module.exports = {
   method: 'post',
   config: {
     id: 'log.post',
-    auth: {
-      mode: 'required'
-    },
   },
   async handler (request, reply) {
     let { key, tag, retrievable, data } = request.payload
