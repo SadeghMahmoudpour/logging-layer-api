@@ -22,6 +22,7 @@ module.exports = [
       './api/log/index.js',
       './api/log/log.get.js',
       './api/log/timeSerie.get.js',
+      './api/log/collection.delete.js',
     ]
   },
   {
