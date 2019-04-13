@@ -28,6 +28,7 @@ module.exports = [
     prefix: '/file',
     routes: [
       './api/file/list.get.js',
+      './api/file/list.delete.js',
     ]
   }
 ]
