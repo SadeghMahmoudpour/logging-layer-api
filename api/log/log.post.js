@@ -16,6 +16,8 @@ module.exports = {
     const client = await Client.findOne({ key })
     if (!client) {
       return reply(Boom.unauthorized('کارفرما نامعتبر است'))
+    } else if (!client.active) {
+      return reply(Boom.unauthorized('کارفرما غیرفعال است'))
     }
 
     data = JSON.parse(data)
@@ -29,6 +31,8 @@ module.exports = {
         tag: storage + '.' + tag
       }
     })
+    client.deletable = false
+    await client.save()
     setTimeout(function () {
       conn.close()
     }, 500)
